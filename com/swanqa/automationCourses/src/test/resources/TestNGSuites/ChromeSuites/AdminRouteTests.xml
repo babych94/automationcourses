@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Admin Route Tests" preserve-order="true">
+    <listeners>
+        <listener class-name="common.testHelper.FailureRetryListener"/>
+        <listener class-name="common.testHelper.TestListener"/>
+    </listeners>
+
+    <test name="Admin Route Tests">
+        <parameter name ="browser" value="chrome"/>
+        <classes>
+            <class name="tests.AdminRouteTests">
+                <methods>
+                    <include name="createNewRoute"/>
+                    <include name="createNewRouteUndo"/>
+                    <include name="createNewRouteClear"/>
+                    <include name="createNewRouteEdit"/>
+                    <include name="createNewRouteWithAutoRouting"/>
+                    <include name="createNewRouteWithThreeStops"/>
+                    <include name="createNewRouteView"/>
+                    <include name="createNewRouteEditPrivateName"/>
+                    <include name="createNewRouteEditDisplayName"/>
+                    <include name="createNewRouteEditAbbreviation"/>
+                    <include name="createNewRouteEditPronunciation"/>
+                    <include name="createNewRouteEditColor"/>
+                    <include name="createNewRouteAddStop"/>
+                    <include name="createNewRouteDeleteStop"/>
+                    <include name="createNewRouteAddSchedule"/>
+                    <include name="createNewRouteAddAddThreeSchedule"/>
+                    <include name="createNewRouteAddScheduleNextDay"/>
+                    <include name="createNewRouteAddScheduleDeleteRow"/>
+                    <include name="createNewRouteAddScheduleInsertRowAbove"/>
+                    <include name="createNewRouteAddScheduleInsertRowBelow"/>
+                    <include name="createNewRouteAddScheduleMoveUp"/>
+                    <include name="createNewRouteAddScheduleMoveDown"/>
+                    <include name="createNewSeason"/>
+                    <include name="createNewSeasonCreateNewRoute"/>
+                    <include name="createNewRouteCheckLink"/>
+                    <include name="editRouteAddingAdditionalRouteLineFollowRoadOn"/>
+                    <include name="editRouteAddingAdditionalRouteLineFollowRoadOff"/>
+                    <include name="viewRouteAddExceptionUsingTodayDate"/>
+                    <include name="viewRouteAddExceptionUsingPastDate"/>
+                    <include name="viewRouteAddExceptionUsingFutureDate"/>
+                    <include name="viewRouteDeleteExceptionRoute"/>
+                    <include name="createNewSeasonEditName"/>
+                    <include name="createNewSeasonEditStartDate"/>
+                    <include name="createNewSeasonEditEndDate"/>
+                    <include name="createNewSeasonDelete"/>
+                    <include name="createNewSeasonView"/>
+                    <include name="viewSeasonEditRoute"/>
+                    <include name="viewSeasonDeleteRoute"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

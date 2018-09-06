@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Admin Driver Tests" preserve-order="true">
+    <listeners>
+        <listener class-name="common.testHelper.FailureRetryListener"/>
+        <listener class-name="common.testHelper.TestListener"/>
+    </listeners>
+
+    <test name="Admin Driver Tests">
+        <parameter name ="browser" value="chrome"/>
+        <classes>
+            <class name="tests.AdminDriverTests">
+                <methods>
+                    <include name="createNewDriver"/>
+                    <include name="createNewDriverEditName"/>
+                    <include name="createNewDriverEditPin"/>
+                    <include name="createNewDriverDelete"/>
+                    <include name="createNewDriverUnDelete"/>
+                    <include name="createNewDriverWithoutName"/>
+                    <include name="createNewDriverWithoutPin"/>
+                    <include name="createNewDriverAddProperties"/>
+                    <include name="createNewDriverAddPropertiesDelete"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

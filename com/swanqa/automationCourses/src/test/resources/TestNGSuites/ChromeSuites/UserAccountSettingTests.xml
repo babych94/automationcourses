@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="User Account Setting Tests" preserve-order="true">
+    <listeners>
+        <listener class-name="common.testHelper.FailureRetryListener"/>
+        <listener class-name="common.testHelper.TestListener"/>
+    </listeners>
+
+    <test name="User Account Setting Tests">
+        <parameter name ="browser" value="chrome"/>
+        <classes>
+            <class name="tests.UserAccountSettingTests">
+                <methods>
+                    <include name="createNewUser"/>
+                    <include name="createNewUserLogin"/>
+                    <include name="createNewUserEdit"/>
+                    <include name="createNewUserDisabled"/>
+                    <include name="createNewUserReEnable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

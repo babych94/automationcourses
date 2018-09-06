@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Vendor Account Setting Tests" preserve-order="true">
+    <listeners>
+        <listener class-name="common.testHelper.FailureRetryListener"/>
+        <listener class-name="common.testHelper.TestListener"/>
+    </listeners>
+
+    <test name="Vendor Account Setting Test">
+        <parameter name ="browser" value="chrome"/>
+        <classes>
+            <class name="tests.VendorAccountSettingTests">
+                <methods>
+                    <include name="createNewVendor"/>
+                    <include name="createNewVendorLogin"/>
+                    <include name="createNewVendorEdit"/>
+                    <include name="createNewVendorDisabled"/>
+                    <include name="createNewVendorReEnable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

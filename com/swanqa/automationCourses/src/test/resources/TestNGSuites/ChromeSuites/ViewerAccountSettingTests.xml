@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Viewer  Account Setting Tests" preserve-order="true">
+    <listeners>
+        <listener class-name="common.testHelper.FailureRetryListener"/>
+        <listener class-name="common.testHelper.TestListener"/>
+    </listeners>
+
+    <test name="Viewer Account Setting Tests">
+        <parameter name ="browser" value="chrome"/>
+        <classes>
+            <class name="tests.ViewerAccountSettingTest">
+                <methods>
+                    <include name="createNewViewer"/>
+                    <include name="createNewViewerLogin"/>
+                    <include name="createNewViewerEdit"/>
+                    <include name="createNewViewerDisabled"/>
+                    <include name="createNewViewerReEnable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

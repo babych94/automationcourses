@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Stop Section Tests" preserve-order="true">
+    <listeners>
+        <listener class-name="common.testHelper.FailureRetryListener"/>
+        <listener class-name="common.testHelper.TestListener"/>
+    </listeners>
+
+    <test name="Stop Section Tests">
+        <parameter name ="browser" value="chrome"/>
+        <classes>
+            <class name="tests.StopSectionTests">
+                <methods>
+                    <include name="createNewStop"/>
+                    <include name="createNewStopEditName"/>
+                    <include name="createNewStopEditCoordinate"/>
+                    <include name="createNewStopSearch"/>
+                    <include name="createNewStopDelete"/>
+                    <include name="createNewStopWithoutName"/>
+                    <include name="createNewStopWithoutCoordinates"/>
+                    <include name="createNewStopLinkToStopsUsingId"/>
+                    <include name="createNewStopView"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
