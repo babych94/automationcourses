@@ -35,7 +35,7 @@ public class DriverFactory {
     }
 
     private void initChromeDriverPath(){
-        String chromeDriverPath = System.getProperty("user.dir") + "/src/test/resources/drivers";
+        String chromeDriverPath = System.getProperty("user.dir")+  "/com/swanqa/automationCourses/src/test/resources/drivers";
 
         if (Utils.getSystemName().contains("Win")) {
             chromeDriverPath += "/windows/chromedriver.exe";
