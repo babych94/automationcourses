@@ -6,7 +6,13 @@ import common.Utils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -249,5 +255,14 @@ public abstract class BasePage {
         Select listDropdown = new Select(dropdown);
         List<WebElement> list = listDropdown.getOptions();
         listDropdown.selectByIndex(Utils.getRandomInteger(list.size()));
+    }
+
+    public void takeScreenshot(String imgName){
+        Screenshot myScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100)).takeScreenshot(driver);
+        try {
+            ImageIO.write(myScreenshot.getImage(),"PNG",new File("C:\\Projects\\ImageScreenshot\\Screenshots\\" + imgName + ".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
